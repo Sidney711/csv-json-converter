@@ -3,4 +3,6 @@ project(csv_json_converter)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(csv_json_converter main.cpp)
+add_executable(csv_json_converter main.cpp
+        Model/UserInput/UserInput.cpp
+        Model/UserInput/UserInput.h)

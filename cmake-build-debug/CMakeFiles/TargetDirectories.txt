@@ -1,3 +1,0 @@
-/home/sidney/PRIVATE/SCHOOL/csv-json-converter/cmake-build-debug/CMakeFiles/csv_json_converter.dir
-/home/sidney/PRIVATE/SCHOOL/csv-json-converter/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sidney/PRIVATE/SCHOOL/csv-json-converter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
