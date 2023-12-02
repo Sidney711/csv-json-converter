@@ -52,3 +52,7 @@ string UserInput::GetToFilePath() {
 string UserInput::GetConvertWay() {
     return this->convertWay;
 }
+
+UserInput::UserInput() {
+
+}

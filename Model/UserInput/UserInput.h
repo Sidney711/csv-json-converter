@@ -16,6 +16,7 @@ private:
     string convertWay;
     UserInput(string fromFilePath, string toFilePath, string convertWay);
 public:
+    UserInput();
     static UserInput CreateUserInput(int argc, char *argv[]);
     string GetFromFilePath();
     string GetToFilePath();
