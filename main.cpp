@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
         if (userInput.GetConvertWay() == "csv-to-json") {
             convertor.convertToJSON();
         } else {
-            //convertor.convertToCSV();
+            convertor.convertToCSV();
         }
     } catch (invalid_argument &e) {
         cout << e.what() << endl;

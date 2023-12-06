@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <set>
 
 using namespace std;
 
@@ -81,3 +82,63 @@ void Convertor::convertToJSON() {
     outputFile.close();
 }
 
+void Convertor::convertToCSV() {
+    ifstream inputFile;
+    inputFile.open(this->userInput.GetFromFilePath());
+
+    ofstream outputFile;
+    outputFile.open(this->userInput.GetToFilePath());
+
+    string line;
+
+    vector<string> blocksOfJSON;
+    string block = "";
+
+    bool record = false;
+
+    while (getline(inputFile, line)) {
+        for (int i = 1; i < line.length(); i++) {
+            if (line[i] == '[') {
+                i++;
+                while (line[i] != ']') {
+                    block += line[i];
+                    i++;
+                }
+                continue;
+            }
+
+            if (line[i] == ',') {
+                block += line[i];
+                record = false;
+                continue;
+            }
+
+            if (line[i] == ':') {
+                record = true;
+                continue;
+            }
+
+            if (line[i] == '{') {
+                continue;
+            }
+
+            if (line[i] == '}') {
+                if(block[block.length() - 1] == ',') {
+                    block = block.substr(0, block.length() - 1);
+                }
+                outputFile << block << endl;
+                block = "";
+                i++;
+                record = false;
+                continue;
+            }
+
+            if (record){
+                block += line[i];
+            }
+        }
+    }
+
+    inputFile.close();
+    outputFile.close();
+}
