@@ -12,13 +12,10 @@
 class Convertor {
 private:
     UserInput userInput;
-    string escapeJSON(const string& str);
 public:
     Convertor(UserInput userInput);
     void convertToJSON();
     void convertToCSV();
-    vector<string> split(string line, char delimiter);
-    string trimQuotesAndSpaces(const string& str);
 };
 
 
