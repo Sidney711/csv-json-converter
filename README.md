@@ -58,7 +58,7 @@ Tato aplikace umožňuje konverzi dat z formátu CSV (Comma-Separated Values) do
 - Při konverzi z CSV do JSON je třeba zajistit, že první řádek CSV obsahuje hlavičky.
 - Při konverzi z JSON do CSV je očekáván formát JSON pole obsahujícího objekty.
 
-Licence
+## Licence
 
 Tato aplikace je poskytována bez záruky a je k dispozici pod licencí MIT License. Používání této aplikace je na vlastní riziko.
 
