@@ -4,6 +4,7 @@
 #include "Convertor.h"
 #include <iostream>
 #include <string>
+#include "../ErrorText/ErrorText.h"
 
 using namespace std;
 
@@ -13,14 +14,14 @@ Convertor::Convertor(UserInput userInput) {
     try {
         inputFile.open(this->userInput.GetFromFilePath());
     } catch (exception e) {
-        cout << "Problem with opening the input file." << endl;
+        cout << (new ErrorText())->invalidOpenInputFile() << endl;
         exit(1);
     }
 
     try {
         outputFile.open(this->userInput.GetToFilePath());
     } catch (exception e) {
-        cout << "Problem with opening the output file" << endl;
+        cout << (new ErrorText())->invalidOpenOutputFile() << endl;
         exit(1);
     }
 }

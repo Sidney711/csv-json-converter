@@ -7,4 +7,6 @@ add_executable(csv_json_converter main.cpp
         Model/UserInput/UserInput.cpp
         Model/UserInput/UserInput.h
         Model/Convertor/Convertor.cpp
-        Model/Convertor/Convertor.h)
+        Model/Convertor/Convertor.h
+        Model/ErrorText/ErrorText.cpp
+        Model/ErrorText/ErrorText.h)
