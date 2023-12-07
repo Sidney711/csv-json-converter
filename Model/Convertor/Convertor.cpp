@@ -14,14 +14,14 @@ Convertor::Convertor(UserInput userInput) {
     try {
         inputFile.open(this->userInput.GetFromFilePath());
     } catch (exception e) {
-        cout << (new ErrorText())->invalidOpenInputFile() << endl;
+        cout << ErrorText::invalidOpenInputFile() << endl;
         exit(1);
     }
 
     try {
         outputFile.open(this->userInput.GetToFilePath());
     } catch (exception e) {
-        cout << (new ErrorText())->invalidOpenOutputFile() << endl;
+        cout << ErrorText::invalidOpenOutputFile() << endl;
         exit(1);
     }
 }

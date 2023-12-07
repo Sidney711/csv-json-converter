@@ -11,12 +11,14 @@ using namespace std;
 
 
 class ErrorText {
+private:
+    ErrorText();
 public:
-    string invalidOpenInputFile();
-    string invalidOpenOutputFile();
-    string invalidParams();
-    string invalidFileTypes();
-    string invalidConvertWay();
+    static string invalidOpenInputFile();
+    static string invalidOpenOutputFile();
+    static string invalidParams();
+    static string invalidFileTypes();
+    static string invalidConvertWay();
 };
 
 

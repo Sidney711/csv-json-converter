@@ -16,7 +16,7 @@ UserInput::UserInput(string fromFilePath, string toFilePath, string convertWay) 
 
 UserInput UserInput::CreateUserInput(int argc, char *argv[]) {
     if (argc != 4) {
-        throw invalid_argument((new ErrorText())->invalidParams());
+        throw invalid_argument(ErrorText::invalidParams());
     }
 
     string fromFilePath = argv[1];
@@ -24,19 +24,19 @@ UserInput UserInput::CreateUserInput(int argc, char *argv[]) {
     string convertWay = argv[3];
 
     if (fromFilePath.empty() || toFilePath.empty() || convertWay.empty()) {
-        throw invalid_argument((new ErrorText())->invalidParams());
+        throw invalid_argument(ErrorText::invalidParams());
     }
 
     if (convertWay == "csv-to-json") {
         if (fromFilePath.substr(fromFilePath.find_last_of(".") + 1) != "csv" || toFilePath.substr(toFilePath.find_last_of(".") + 1) != "json") {
-            throw invalid_argument((new ErrorText())->invalidFileTypes());
+            throw invalid_argument(ErrorText::invalidFileTypes());
         }
     } else if (convertWay == "json-to-csv") {
         if (fromFilePath.substr(fromFilePath.find_last_of(".") + 1) != "json" || toFilePath.substr(toFilePath.find_last_of(".") + 1) != "csv") {
-            throw invalid_argument((new ErrorText())->invalidFileTypes());
+            throw invalid_argument(ErrorText::invalidFileTypes());
         }
     } else {
-        throw invalid_argument((new ErrorText())->invalidConvertWay());
+        throw invalid_argument(ErrorText::invalidConvertWay());
     }
 
     return UserInput(fromFilePath, toFilePath, convertWay);

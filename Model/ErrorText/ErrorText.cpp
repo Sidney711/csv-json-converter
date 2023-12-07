@@ -23,3 +23,7 @@ string ErrorText::invalidFileTypes() {
 string ErrorText::invalidConvertWay() {
     return "Please enter valid convert way!";
 }
+
+ErrorText::ErrorText() {
+
+}
