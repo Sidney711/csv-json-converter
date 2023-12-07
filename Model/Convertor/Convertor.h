@@ -7,22 +7,16 @@
 
 
 #include "../UserInput/UserInput.h"
+#include "../ConvertStrategy/ConvertStrategy.h"
 #include <vector>
 #include <fstream>
 
 class Convertor {
 private:
-    UserInput userInput;
-    ifstream inputFile;
-    ofstream outputFile;
+    ConvertStrategy & convertStrategy;
 public:
-    Convertor(UserInput userInput);
-    ~Convertor();
-    void convertToJSON();
-    void convertToCSV();
-    vector<string> getHeadersOfCsv(string line);
-    void printOneJsonBlockFromLine(string line, vector<string> headersOfCSV, bool firstRecord);
-    void processOneLineFromJson(string line, string& block, bool& record);
+    Convertor(ConvertStrategy & convertStrategy);
+    void convert(UserInput userInput);
 };
 
 

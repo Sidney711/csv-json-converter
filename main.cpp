@@ -2,18 +2,23 @@
 #include <string>
 #include "Model/UserInput/UserInput.h"
 #include "Model/Convertor/Convertor.h"
+#include "Model/ConvertFromCsvToJson/ConvertFromCsvToJson.h"
+#include "Model/ConvertFromJsonToCsv/ConvertFromJsonToCsv.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
     try {
         UserInput userInput = UserInput::CreateUserInput(argc, argv);
-        Convertor convertor = Convertor(userInput);
 
         if (userInput.GetConvertWay() == "csv-to-json") {
-            convertor.convertToJSON();
+            ConvertFromCsvToJson convertFromCsvToJson;
+            Convertor convertor = Convertor(convertFromCsvToJson);
+            convertor.convert(userInput);
         } else {
-            convertor.convertToCSV();
+            ConvertFromJsonToCsv convertFromJsonToCsv;
+            Convertor convertor = Convertor(convertFromJsonToCsv);
+            convertor.convert(userInput);
         }
     } catch (invalid_argument &e) {
         cout << e.what() << endl;
