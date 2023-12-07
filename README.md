@@ -1,4 +1,4 @@
-# CSV to JSON Converter
+# csv-json-converter
 
 Tato aplikace umožňuje konverzi dat z formátu CSV (Comma-Separated Values) do formátu JSON (JavaScript Object Notation) a zpět. Zde naleznete návod k použití a příklady CSV a JSON souborů, které lze použít.
 
